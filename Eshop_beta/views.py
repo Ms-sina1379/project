@@ -7,11 +7,12 @@ def home_page(request):
     }
     return render(request, 'esh_home.html', context)
 
+
 def header(request):
     context = {
 
     }
-    return render(request,'shard/header.html',context)
+    return render(request, 'shard/header.html', context)
 
 
 def footer(request):

@@ -37,9 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_render_partial',
 
-    #our application
+    # our application
     'Eshop_account'
-
 
 ]
 
