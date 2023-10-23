@@ -35,8 +35,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_render_partial'
+    'django_render_partial',
+
     #our application
+    'Eshop_account'
+
 
 ]
 
