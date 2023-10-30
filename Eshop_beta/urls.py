@@ -8,7 +8,7 @@ from .views import home_page, footer, header
 urlpatterns = [
 
                   path('', home_page),
-                  path('account', include('Eshop_account.urls')),
+                  path('login/', include('Eshop_account.urls')),
                   path('header', header, name="header"),
                   path('footer', footer, name="footer"),
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
