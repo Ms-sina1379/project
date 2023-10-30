@@ -8,9 +8,12 @@ from .views import home_page, footer, header
 urlpatterns = [
 
                   path('', home_page),
-                  path('login/', include('Eshop_account.urls')),
+                  path('login', include('Eshop_account.urls')),
                   path('header', header, name="header"),
                   path('footer', footer, name="footer"),
+                  path('footer', footer, name="footer"),
+                  path('admin/', admin.site.urls),
+
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-# if settings.DEBUG:
-#     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
