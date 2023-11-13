@@ -8,7 +8,7 @@ from .views import home_page, footer, header
 urlpatterns = [
 
                   path('', home_page),
-                  path('user/',include('Eshop_account.urls')),
+                  path('',include('Eshop_account.urls')),
                   path('header/', header, name="header"),
                   path('footer', footer, name="footer"),
                   path('admin/', admin.site.urls),
