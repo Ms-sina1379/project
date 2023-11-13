@@ -8,4 +8,4 @@ def Rejister(request):
 
     context={}
 
-    return  render(request,'Eshop_account/rejister.html',context)
+    return  render(request,'Eshop_account/register.html',context)
