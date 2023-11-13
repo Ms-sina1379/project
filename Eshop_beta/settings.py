@@ -57,8 +57,8 @@ ROOT_URLCONF = 'Eshop_beta.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'Eshop_beta/core/template']
-        ,
+        # 'DIRS': [BASE_DIR / 'Eshop_beta/core/template']
+        # ,
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
