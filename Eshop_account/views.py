@@ -4,8 +4,10 @@ def login(request):
 
     context= {}
     return render(request, 'Eshop_account/login.html', context)
-def Rejister(request):
+def Register(request):
 
     context={}
 
     return  render(request,'Eshop_account/register.html',context)
+
+
