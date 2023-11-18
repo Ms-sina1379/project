@@ -1,8 +1,11 @@
 from django.shortcuts import render
 
-def login(request):
+def login_User(request):
+    Login_Form=loginForm(request.post or None)
+    context= {
 
-    context= {}
+    'login_form':login_form
+    }
     return render(request, 'Eshop_account/login.html', context)
 def register(request):
 
