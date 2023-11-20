@@ -1,12 +1,19 @@
 from django.contrib.auth import login,get_user_model,authenticate
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .forms import LoginForms
 def login_User(request):
     Login_Form=LoginForms(request.POST or None)
     if Login_Form.is_valid():
         user_name=Login_Form.cleaned_data.get("user_name" )
         password=Login_Form.cleaned_data.get("  password" )
-        User=authenticate(username="user_name",password="password")
+        user=authenticate(username=user_name,password=password)
+        if user is not None:
+            login(request,user)
+            redirect("/")
+
+
+
+
         print(Login_Form.cleaned_data)
     context= {
 
