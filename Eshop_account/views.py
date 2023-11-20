@@ -11,7 +11,7 @@ def login_User(request):
             login(request,user)
             redirect("/")
         else:
-            Login_Form.add_error('user_name',"کاربری با مشخصات زیر پیدا نش ",)
+            Login_Form.add_error('user_name',"کاربری با مشخصات زیر پیدا نشد ",)
         # print(Login_Form.cleaned_data)
     context= {
 
