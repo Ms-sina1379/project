@@ -4,8 +4,8 @@ from django.contrib.auth import login,get_user_model, authenticate
 
 
 def login_user(request):
-    if request.user.is_authenticated:
-        return redirect("/")
+    # if request.user.is_authenticated:
+    #     return redirect("/")
     Login_Form = LoginForms(request.POST or None)
     if Login_Form.is_valid():
         user_name = Login_Form.cleaned_data.get("user_name")
