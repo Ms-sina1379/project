@@ -27,7 +27,12 @@ class Registerforms(forms.Form):
     user_name = forms.CharField(
         widget=forms.TextInput(attrs={'placeholder': "لطفا نلم کاربری خود را وارد کنید "}),
         label="نام کاربری "
-    )
+        )
+
+    email= forms.CharField(
+        widget=forms.EmailField(attrs={'placeholder': "لطفا ایمیل خود را وارد کنید "}),
+        label="ایمیل"
+        )
 
     password: CharField = forms.CharField(
         widget=forms.PasswordInput(attrs={'placeholder': 'لطفا رمز خود را وارد کنید '}),
