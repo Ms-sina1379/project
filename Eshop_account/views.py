@@ -10,11 +10,7 @@ def login_User(request):
         if user is not None:
             login(request,user)
             redirect("/")
-
-
-
-
-        print(Login_Form.cleaned_data)
+        # print(Login_Form.cleaned_data)
     context= {
 
     'login_form':Login_Form
