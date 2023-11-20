@@ -1,4 +1,5 @@
 from django import forms
+from django.contrib.auth.models import User
 from django.forms import CharField
 
 
@@ -14,3 +15,6 @@ class LoginForms(forms.Form):
         label="کلمه عبور "
 
 )
+    def clean_user_name(self):
+        user_name=self.cleaned_data.get("user_name")
+        return user_name
