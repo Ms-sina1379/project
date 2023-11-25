@@ -98,6 +98,27 @@ class Registerforms(forms.Form):
         label="تکرار کلمه عبور "
     )
 
+    def clean_user_name(self):
+        user_name = self.cleaned_data.get("user_name")
+        is_existe_user = User.objects.filter(username=user_name).exists()
+        if not is_existe_user:
+            raise forms.ValidationError("کاربر با مشخصات زیر ثبت نام نکرده است ")
+        return user_name
+
+
+
+    def clean_email(self):
+        email=self.cleaned_data.get("email")
+        is_exists_user_by_email=User.objects.filter(email=email).exists()
+        if is_exists_user_by_email:
+            raise forms.ValidationError("کاربر وارد شده تکراری است  ")
+
+        if len(email)>20:
+            raise forms.ValidationError("تعداد کاراکتر های ایمیل باید کمتر باشد ")
+        return email
+
+
+
     def clean_password(self):
         cleaned_data = super().clean()
         password = cleaned_data.get("password")
@@ -105,6 +126,4 @@ class Registerforms(forms.Form):
 
         if password and re_password and password != re_password:
             raise forms.ValidationError("کلمه عبور و تکرار آن باید یکسان باشند")
-
-
         return password

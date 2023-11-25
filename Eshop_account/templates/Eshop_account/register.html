@@ -9,7 +9,27 @@
                         <form method="post">
 
                             {% csrf_token %}
-                            {{ register_form }}
+
+                                <label for="{{ register_form.user_name.id_for_label }}">{{ register_form.user_name.label}}</label>
+                                {{ register_form.user_name }}
+                                {% for error in register_form.user_name.errors %}
+                                <p style="color: #dc0606;">{{ error }}
+                                </p>
+                                {% endfor %}
+
+                                <label for="{{ register_form.email.id_for_label }}">{{ register_form.email.label}}</label>
+                                {{ register_form.email }}
+                                {% for error in register_form.email.errors %}
+                                <p style="color: #dc0606;">{{ error }}
+                                </p>
+                                {% endfor %}
+
+                                <label for="{{ register_form.password.id_for_label }}">{{ register_form.password.label }}</label>
+                                {{ register_form.password }}
+                                {% for error in register_form.password.errors %}
+                                <p style="color: #ee0b0b"></p>
+                                {% endfor %}
+                                {{ register_form }}
                             <input type="text" placeholder="نام کاربری"/>
                             <input type="email" placeholder="آدرس ایمیل"/>
                             <input type="password" placeholder="رمز عبور"/>
