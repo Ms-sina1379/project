@@ -6,7 +6,10 @@
                 <div class="col-sm-4 col-sm-offset-1">
                     <div class="signup-form">
                         <h2>ثبت نام کاربر جدید</h2>
-                        <form action="#">
+                        <form method="post">
+
+                            {% csrf_token %}
+                            {{ register_form }}
                             <input type="text" placeholder="نام کاربری"/>
                             <input type="email" placeholder="آدرس ایمیل"/>
                             <input type="password" placeholder="رمز عبور"/>
