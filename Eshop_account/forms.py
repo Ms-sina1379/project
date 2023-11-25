@@ -52,13 +52,12 @@
 #     if not is_existe_user:
 #         raise forms.ValidationError("کاربر با مشخصات زیر ثبت نام نکرده است ")
 #     return user_name
-
-
+#++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++=
 
 from django import forms
 from django.contrib.auth.models import User
 from django.forms import CharField
-
+from django.core import validators
 class LoginForms(forms.Form):
     user_name = forms.CharField(
         widget=forms.TextInput(attrs={'placeholder': "لطفا نام کاربری خود را وارد کنید "}),
@@ -80,12 +79,20 @@ class LoginForms(forms.Form):
 class Registerforms(forms.Form):
     user_name = forms.CharField(
         widget=forms.TextInput(attrs={'placeholder': "لطفا نام کاربری خود را وارد کنید "}),
-        label="نام کاربری "
+        label="نام کاربری ",
+         validators=[validators.MaxLengthValidator(limit_value=20,
+                                                   message="تغداد کاراکتر های وارذ شده نباید بیشتر از 20 کاراکتر یاشد  "),
+                     validators.MinLengthValidator(8,"تعداد کارکتر های وارد شده نباید کمتر از 8 باشد ")
+
+        ]
     )
 
     email = forms.EmailField(
         widget=forms.EmailInput(attrs={'placeholder': "لطفا ایمیل خود را وارد کنید "}),
-        label="ایمیل"
+        label="ایمیل",
+            validators = [validators.MaxLengthValidator(limit_value=20,
+                                                message="ایمیل وارد شده اشتباه است  "),
+            ]
     )
 
     password = forms.CharField(
