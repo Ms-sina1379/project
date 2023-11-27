@@ -8,10 +8,12 @@ def Product(request):
 
 
 class Productlist(ListView):
+
     template='product/product_list.html'
 
+    def get_queryset(self):
+        return Product.object.all()
 
-def get_queryset(self):
-        return Product.objects.all()
+
 
 

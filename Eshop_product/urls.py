@@ -2,5 +2,6 @@ from django.urls import path
 
 from .views import Product
 urlpatterns = [
-    path('products/',Product),
+    path('products-fuction',Product),
+    path('product/',ProducsList.as_viwe),
 ]
