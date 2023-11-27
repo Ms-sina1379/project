@@ -39,7 +39,7 @@ INSTALLED_APPS = [
 
     # our application
     'Eshop_account'
-
+    'Eshop_product'
 ]
 
 MIDDLEWARE = [
