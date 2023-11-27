@@ -2,16 +2,16 @@ from django.shortcuts import render
 from django.views.generic import ListView
 # Create your views here.
 
-def products(request):
+def product(request):
     context = {}
     return render(request, "product/product_list.html", context)
 
 
-class productslist(ListView):
+class product_list(ListView):
     template='product/product_list.html'
 
 
 def get_queryset(self):
-        return products.objects.all()
+        return product.objects.all()
 
 
