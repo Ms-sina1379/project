@@ -7,11 +7,11 @@ def products(request):
     return render(request, "product/product_list.html", context)
 
 
-class productlist(ListView):
+class productslist(ListView):
     template='product/product_list.html'
 
 
-    def get_queryset(self):
+def get_queryset(self):
         return products.objects.all()
 
 

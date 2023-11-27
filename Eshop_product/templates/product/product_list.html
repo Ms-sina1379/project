@@ -9,21 +9,20 @@
 					<div class="features_items"><!--features_items-->
 						<h2 class="title text-center">لیست محصولات </h2>
                         {% for product in object_list %}
-                            <div class="col-sm-4 pull-right">
-
-                        {% endfor %}
+                        <div class="col-sm-4 pull-right">
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img src="{% static "images/shop/product.jpg"%}" alt="">
-										<h2>1.250.000 ريال</h2>
-										<p>{{ product.title }}</p>
+										<img src="{% static "images/shop/product.jpg" %}" alt="">
+
+										<h2>{{ products.price }} ريال</h2>
+										<p>{{ products.title }}</p>
 										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>افزودن به سبـد خریـد</a>
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>1.250.000 ريال</h2>
-											<p>{{ product.title }}</p>
+											<h2>{{ products.price }} ريال</h2>
+											<p>{{ products.title }}</p>
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>افزودن به سبـد خریـد</a>
 										</div>
 									</div>
@@ -36,8 +35,8 @@
 								</div>
 							</div>
 						</div>
+                        {% endfor %}
 					<div class="clearfix"></div>
-
 						<ul class="pagination">
 							<li class="active"><a href="">1</a></li>
 							<li><a href="">2</a></li>
