@@ -38,8 +38,8 @@ INSTALLED_APPS = [
     'django_render_partial',
 
     # our application
-    'Eshop_account'
-    'Eshop_product'
+    'Eshop_account',
+    'Eshop_product',
 ]
 
 MIDDLEWARE = [
