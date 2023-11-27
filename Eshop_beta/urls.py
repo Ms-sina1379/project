@@ -9,6 +9,7 @@ urlpatterns = [
 
                   path('', home_page),
                   path('',include('Eshop_account.urls')),
+                  path('',include('Eshop_product.urls')),
                   path('header/', header, name="header"),
                   path('footer', footer, name="footer"),
                   path('admin/', admin.site.urls),
