@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 from Eshop_beta import settings
-from .views import home_page, footer, header
+from Eshop_beta.views import home_page, footer, header
 
 urlpatterns = [
 
