@@ -8,19 +8,20 @@
 				<div class="col-sm-9 padding-right">
 					<div class="features_items"><!--features_items-->
 						<h2 class="title text-center">محصولات عمده</h2>
-						<div class="col-sm-4">
+                        {% for product in object_list %}
+                            <div class="col-sm-4 pull-right" >
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="productinfo text-center">
-										<img rc="{% static 'images/home/girl2.jpg' %}" alt="">
-										<h2>1.250.000 ريال</h2>
-										<p>توضیحات کوتـاه محصـول</p>
+										<img src="{% static 'images/home/girl2.jpg' %}" alt="">
+										<h2>{{ product.price}} ريال</h2>
+										<p>{{ Products.title }}</p>
 										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>افزودن به سبـد خریـد</a>
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>1.250.000 ريال</h2>
-											<p>توضیحات کوتـاه محصـول</p>
+											<h2>{{ product.price }} ريال</h2>
+											<p>{{ Products.title }}</p>
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>افزودن به سبـد خریـد</a>
 										</div>
 									</div>
@@ -33,7 +34,9 @@
 								</div>
 							</div>
 						</div>
-`                          <div class="clearfix"></div>
+
+                        {% endfor %}
+                          <div class="clearfix"></div>
 
 						<ul class="pagination">
 							<li class="active"><a href="">1</a></li>
@@ -150,7 +153,7 @@
 						</div><!--/price-range-->
 
 						<div class="shipping text-center"><!--shipping-->
-							<img src="images/home/shipping.jpg" alt="">
+							<img src="{% static 'images/home/shipping.jpg' %}" alt="">
 						</div><!--/shipping-->
 
 					</div>
