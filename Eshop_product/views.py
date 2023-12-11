@@ -4,8 +4,8 @@ from.models import Product
 # Create your views here.
 
 def Products(request):
-    Products= Product.objects.all()
-    return render(request, "product/product_list.html", {'products':Product})
+    Productsdetails= Product.objects.all()
+    return render(request, "product/product_list.html", {'products':Productsdetails})
 
 class ProductsList (ListView):
 
