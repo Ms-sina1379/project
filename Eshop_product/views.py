@@ -4,8 +4,8 @@ from.models import Product
 # Create your views here.
 
 def Products(request):
-    context = {}
-    return render(request, "product/product_list.html", context)
+    Products= Product.objects.all()
+    return render(request, "product/product_list.html", {'products':Product})
 
 class ProductsList (ListView):
 
@@ -13,3 +13,4 @@ class ProductsList (ListView):
 
     def get_queryset(self):
         return Products.objects.all()
+
