@@ -8,7 +8,6 @@ def home_page(request):
     return render(request, 'shared/esh_home.html', context)
 
 
-
 def header(request):
     context = {
 
