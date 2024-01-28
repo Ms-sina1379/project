@@ -2,10 +2,10 @@
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path
-from .views import Products, ProductsList
+from .views import products, ProductsList
 
 urlpatterns = [
-    path('products/', Products),
+    path('products/', products),
     path('products-class/', ProductsList.as_view()),
 ]
 

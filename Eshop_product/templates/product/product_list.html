@@ -7,20 +7,19 @@
 
 				<div class="col-sm-9 padding-right">
 					<div class="features_items"><!--features_items-->
-						<h2 class="title text-center">محصولات عمده</h2>
-                        {% for product in Products %}
+                        {% for product in products %}
                             <div class="col-sm-4 pull-right" >
 							<div class="product-image-wrapper">
 								<div class="single-products">
 									<div class="Productinfo text-center">
 										<img src="{% static 'images/home/girl2.jpg' %}" alt="">
-										<h2>{{ product.price}} ريال</h2>
+										<h2>{{ product.price}}تومان </h2>
 										<p>{{ Product.title }}</p>
 										<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>افزودن به سبـد خریـد</a>
 									</div>
 									<div class="product-overlay">
 										<div class="overlay-content">
-											<h2>{{ product.price }} ريال</h2>
+											<h2>{{ product.price }} تومان</h2>
 											<p>{{ Products.title }}</p>
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>افزودن به سبـد خریـد</a>
 										</div>
@@ -36,16 +35,26 @@
 						</div>
 
                         {% endfor %}
-                          <div class="clearfix"></div>
+                      <div class="clearfix"></div>
 
-						<ul class="pagination">
-							<li class="active"><a href="">1</a></li>
-							<li><a href="">2</a></li>
-							<li><a href="">3</a></li>
-							<li><a href="">»</a></li>
-						</ul>
-					</div><!--features_items-->
-				</div>
+                            <ul class="pagination">
+                                {% if page_obj.has_previous %}
+                                    <li><a href="?page={{ page_obj.previous_page_number }}">قبلی</a></li>
+                                {% endif %}
+                                {% for page in paginator.page_range %}
+                                    {% if page == page_obj.number %}
+                                        <li><a class="active" href="?page={{ page }}">{{ page }}</a></li>
+                                    {% else %}
+                                        <li><a href="?page={{ page }}">{{ page }}</a></li>
+                                    {% endif %}
+                                {% endfor %}
+
+                                {% if page_obj.has_next %}
+                                    <li><a href="?page={{ page_obj.next_page_number }}">»</a></li>
+                                {% endif %}
+                            </ul>
+                            </div><!--features_items-->
+                            </div>
 
 				<div class="col-sm-3">
 					<div class="left-sidebar">
