@@ -2,11 +2,11 @@
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path
-from .views import products, ProductsList
+from .views import product_detail, ProductsList
 
 urlpatterns = [
-    path('products/', products),
     path('products-class/', ProductsList.as_view()),
+    path('products/<title>', product_detail),
 ]
 
 if settings.DEBUG:
