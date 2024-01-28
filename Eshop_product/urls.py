@@ -5,8 +5,9 @@ from django.urls import path
 from .views import product_detail, ProductsList
 
 urlpatterns = [
-    path('products-class/', ProductsList.as_view()),
-    path('products/<title>', product_detail),
+    path('products-class/', ProductsList.as_view(), name='products-class'),
+    path('products/<int:id>/<str:title>', product_detail, name='product_detail'),
+
 ]
 
 if settings.DEBUG:
